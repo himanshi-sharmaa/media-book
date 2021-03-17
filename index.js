@@ -1,5 +1,3 @@
-const mockData = ["Himanshi","Dhruv","Poonam","Sandeep"];
-
 const getApiData = async() => {
   var fetchHeaders = new Headers({
     Accept: 'application/json'
@@ -35,5 +33,12 @@ class UserList extends HTMLElement {
     }
 }
 
+class Search extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = ``
+  }
+}
+
 customElements.define('one-dialog', OneDialog)
 customElements.define('user-list', UserList);
+customElements.define('search',Search);

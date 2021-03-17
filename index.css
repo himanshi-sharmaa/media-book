@@ -1,3 +1,14 @@
 .heading {
-    color: blue;
+    padding: .4em;
+}
+
+.header {
+    width: 100vw;
+    height: 2.5em;
+    background-color: cadetblue;
+    color: black;
+}
+
+.inputStyle {
+    
 }
