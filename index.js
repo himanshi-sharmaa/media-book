@@ -32,11 +32,13 @@ class UserList extends HTMLElement {
       this.innerHTML = `<h2>Hey! ${user}</h2>`
     }
 }
-const userData = [{name:"A1", age:10},{name:"B1", age:19},{name:"C1", age: 20}];
+const userData = [{name:"D1", age:30},{name:"B1", age:19},{name:"C1", age: 20}];
 
 const searchData = () => {
   const searchedData = document.getElementById("search").value; 
   
+  sortData();
+
   const d = userData.filter(x => x.age>18);
 
   //Use filter method to implement search
@@ -44,6 +46,24 @@ const searchData = () => {
   const searchDataList = userData.filter(postDetails => postDetails.name.toLowerCase().includes(searchedData.toLowerCase()));
   
   return searchDataList;
+}
+
+const sortData = () => {
+  //Sorting numbers in ascending order
+  const sortedData = userData.sort(function(a,b){
+    if(a.age>b.age) return 1;
+    if(a.age<b.age) return -1;
+    return 0;
+  });
+
+  //Sorting string
+  const sortedStringData = userData.sort(function(a,b){
+    let x= a.name.toUpperCase(),
+        y=b.name.toUpperCase();
+        return x>y? 1: x<y? -1: 0;
+  })
+  console.log("Sorted array", sortedStringData)
+  return sortedData;
 }
 
 customElements.define('one-dialog', OneDialog)
