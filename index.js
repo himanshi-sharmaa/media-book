@@ -35,14 +35,15 @@ class UserList extends HTMLElement {
 const userData = [{name:"A1", age:10},{name:"B1", age:19},{name:"C1", age: 20}];
 
 const searchData = () => {
-  const searchedData = document.getElementById("search"); 
-  console.log("Search", searchedData.value);
-  const d = userData.filter(x => x.age>18);
-  console.log("d: ",d);
-  console.log("Original data: ", userData)
+  const searchedData = document.getElementById("search").value; 
   
+  const d = userData.filter(x => x.age>18);
+
   //Use filter method to implement search
-  return searchData;
+  //Search can be done using startsWith or includes function
+  const searchDataList = userData.filter(postDetails => postDetails.name.toLowerCase().includes(searchedData.toLowerCase()));
+  
+  return searchDataList;
 }
 
 customElements.define('one-dialog', OneDialog)
