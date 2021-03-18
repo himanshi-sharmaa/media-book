@@ -3,12 +3,15 @@
 }
 
 .header {
-    width: 100vw;
+    /* width: 100vw; */
     height: 2.5em;
     background-color: cadetblue;
     color: black;
 }
 
-.inputStyle {
-    
+.searchStyle {
+    width: 97vw;
+    border-radius: .4em;
+    padding: .3em;
+    margin: .7em;
 }

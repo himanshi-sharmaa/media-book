@@ -32,13 +32,18 @@ class UserList extends HTMLElement {
       this.innerHTML = `<h2>Hey! ${user}</h2>`
     }
 }
+const userData = [{name:"A1", age:10},{name:"B1", age:19},{name:"C1", age: 20}];
 
-class Search extends HTMLElement {
-  connectedCallback() {
-    this.innerHTML = ``
-  }
+const searchData = () => {
+  const searchedData = document.getElementById("search"); 
+  console.log("Search", searchedData.value);
+  const d = userData.filter(x => x.age>18);
+  console.log("d: ",d);
+  console.log("Original data: ", userData)
+  
+  //Use filter method to implement search
+  return searchData;
 }
 
 customElements.define('one-dialog', OneDialog)
 customElements.define('user-list', UserList);
-customElements.define('search',Search);
